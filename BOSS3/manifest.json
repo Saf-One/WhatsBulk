@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "WhatsApp File Sender",
+    "version": "1.0",
+    "description": "Send files to WhatsApp contacts from the extension popup",
+    "permissions": ["scripting", "storage", "activeTab"],
+    "host_permissions": ["https://web.whatsapp.com/*"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [{
+        "matches": ["https://web.whatsapp.com/*"],
+        "js": ["content.js"]
+    }]
+}
