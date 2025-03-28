@@ -6,122 +6,76 @@
     <title>WhatsApp Tester</title>
     <style>
         body {
+            width: 300px;
             font-family: Arial, sans-serif;
-            width: 350px;
             padding: 15px;
-            background-color: #f0f0f0;
         }
         
         h1 {
-            color: #128C7E;
-            text-align: center;
-            margin-top: 0;
             font-size: 18px;
+            margin-bottom: 15px;
         }
         
         .section {
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #075E54;
-        }
-        
-        .status {
-            margin-top: 10px;
-            padding: 5px;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
             border-radius: 4px;
-            font-size: 14px;
         }
         
-        .button {
-            background-color: #128C7E;
+        button {
+            background-color: #25D366;
             color: white;
             border: none;
             padding: 8px 15px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 14px;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-bottom: 5px;
         }
         
-        .button:hover {
-            background-color: #075E54;
+        button:hover {
+            background-color: #128C7E;
         }
         
-        .button:disabled {
+        button:disabled {
             background-color: #cccccc;
             cursor: not-allowed;
         }
         
-        .file-info {
+        .status {
             margin-top: 10px;
             font-size: 14px;
-            color: #128C7E;
+            color: #666;
+            min-height: 40px;
         }
         
-        .input-field {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-        .file-container {
-            margin-top: 10px;
-        }
-        
-        .caption-container {
-            margin-top: 10px;
-        }
-        
-        #buttonContainer {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
+        .note {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
         }
     </style>
 </head>
 
 <body>
-    <h1>WhatsApp Tester</h1>
-
-    <div id="status" class="status">Checking WhatsApp connection...</div>
-
-    <div id="buttonContainer"></div>
+    <h1>WhatsApp Message Tester</h1>
 
     <div class="section">
-        <div class="section-title">Phone Number</div>
-        <input type="text" id="number" class="input-field" placeholder="Enter phone number (with country code, no + or spaces)">
+        <h2>Text Message Test</h2>
+        <p>Send "Hi" to 918287066456</p>
+        <button id="sendTextBtn">Send Text Message</button>
+        <div id="textStatus" class="status">Ready to send</div>
     </div>
 
     <div class="section">
-        <div class="section-title">Send Test Text Message</div>
-        <p>Send "Hi" to the number above</p>
-        <button id="sendTextBtn" class="button" disabled>Send Text</button>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Send Test Image Message</div>
-
-        <div class="file-container">
-            <input type="file" id="fileInput" accept="image/*">
-            <div id="selectedFileName" class="file-info"></div>
-        </div>
-
-        <div class="caption-container">
-            <div class="section-title">Caption</div>
-            <input type="text" id="caption" class="input-field" placeholder="Enter caption (optional)">
-        </div>
-
-        <button id="sendImageBtn" class="button" disabled>Send Image</button>
+        <h2>Image Message Test</h2>
+        <p>Send an image to 918287066456</p>
+        <button id="sendImageBtn">Send Image Message</button>
+        <div id="imageStatus" class="status">Ready to send</div>
+        <div class="note">You'll need to select an image file when prompted</div>
     </div>
 
     <script src="popup.js"></script>

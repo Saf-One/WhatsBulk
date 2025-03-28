@@ -29,8 +29,9 @@
     },
     "web_accessible_resources": [{
         "resources": [
-            "icons/*",
-            "js/webResource.js"
+            "js/webResource.js",
+            "js/webResource_patch.js",
+            "js/debug.js"
         ],
         "matches": ["<all_urls>"]
     }],
